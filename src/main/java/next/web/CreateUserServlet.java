@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 
 import core.db.DataBase;
 
+// 회원가입 Servlet
 @WebServlet("/user/create")
 public class CreateUserServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -22,8 +23,13 @@ public class CreateUserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User user = new User(req.getParameter("userId"), req.getParameter("password"), req.getParameter("name"),
+
+        User user = new User(
+                req.getParameter("userId"),
+                req.getParameter("password"),
+                req.getParameter("name"),
                 req.getParameter("email"));
+
         log.debug("user : {}", user);
         DataBase.addUser(user);
         resp.sendRedirect("/user/list");
