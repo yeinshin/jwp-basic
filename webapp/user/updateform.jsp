@@ -23,7 +23,7 @@
             <form name="question" method="post" action="/users/updateForm">
                 <div class="form-group">
                     <label for="userId">사용자 아이디</label>
-                    <input type="hidden" class="form-control" id="userId" name="userId" placeholder="User ID" value="${sessionScope.user.userId}">
+                    <input type="text" class="form-control" id="userId" name="userId" placeholder="User ID" value="${sessionScope.user.userId}" readonly>
                 </div>
                 <div class="form-group">
                     <label for="password">비밀번호</label>
