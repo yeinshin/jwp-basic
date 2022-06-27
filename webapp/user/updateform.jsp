@@ -20,22 +20,22 @@
 <div class="container" id="main">
     <div class="col-md-6 col-md-offset-3">
         <div class="panel panel-default content-main">
-            <form name="question" method="post" action="/user/update">
+            <form name="question" method="post" action="/users/updateForm">
                 <div class="form-group">
                     <label for="userId">사용자 아이디</label>
-                    <input type="hidden" class="form-control" id="userId" name="userId" placeholder="User ID" value="${user.userId}">
+                    <input type="hidden" class="form-control" id="userId" name="userId" placeholder="User ID" value="${sessionScope.user.userId}">
                 </div>
                 <div class="form-group">
                     <label for="password">비밀번호</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" value="${user.password}">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" value="${sessionScope.user.password}">
                 </div>
                 <div class="form-group">
                     <label for="name">이름</label>
-                    <input class="form-control" id="name" name="name" placeholder="Name" value="${user.name}">
+                    <input class="form-control" id="name" name="name" placeholder="Name" value="${sessionScope.user.name}">
                 </div>
                 <div class="form-group">
                     <label for="email">이메일</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="${user.email}">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="${sessionScope.user.email}">
                 </div>
                 <button type="submit" class="btn btn-success clearfix pull-right">수정</button>
                 <div class="clearfix" />

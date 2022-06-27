@@ -38,7 +38,9 @@ public class CreateUserServlet extends HttpServlet {
                 req.getParameter("email"));
 
         log.debug("user : {}", user);
+
         DataBase.addUser(user);
-        resp.sendRedirect("/user/list");
+
+        resp.sendRedirect("/");
     }
 }
