@@ -8,7 +8,7 @@ import javax.servlet.annotation.*;
 import javax.xml.crypto.Data;
 import java.io.IOException;
 
-@WebServlet("/user/updateform")
+@WebServlet("/users/updateForm")
 public class UpdateUserFormServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     // a 태그 사용 --> GET 방식
@@ -17,7 +17,7 @@ public class UpdateUserFormServlet extends HttpServlet {
         System.out.println("userId Test : "+request.getParameter("userId"));
         // userId : 수정하려는 회원의 ID
         request.setAttribute("user",DataBase.findUserById(request.getParameter("userId")));
-        RequestDispatcher rd = request.getRequestDispatcher("/user/update.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/user/updateform.jsp");
         rd.forward(request,response);
     }
 
