@@ -9,7 +9,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 // 개인정보 수정은 로그인 사용자만 가능하며 자신의 정보만 수정 가능해야 한다.
-@WebServlet("/users/updateForm")
+@WebServlet(value = {"/users/update","/users/updateForm"})
 public class UpdateUserServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     // a 태그 사용 --> GET 방식
@@ -44,7 +44,7 @@ public class UpdateUserServlet extends HttpServlet {
         );
 
         DataBase.updateUser(user);
-        response.sendRedirect("/user/list");
+        response.sendRedirect("/");
     }
 
 }
